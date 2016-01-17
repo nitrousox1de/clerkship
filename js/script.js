@@ -291,8 +291,8 @@ var listOfSites = {
     },
     {
       "cname": "Arlington",
-      "lat": "42.416625",
-      "lng": "-71.154179",
+      "lat": "42.416416",
+      "lng": "-71.154299",
       "preceptor": "Bari Brodsky, M.D.",
       "scode": "FAM472-FP-A"
     },
@@ -638,6 +638,7 @@ function process(e){
         for (j = 0; j < cs_latlng.length; j++){
           tmp = {
             city: listOfSites.cities[j].cname,
+            scode: listOfSites.cities[j].scode,
             distance_text: responses[j].distance.text,
             distance: responses[j].distance.value,
             duration_text: responses[j].duration.text,
@@ -650,7 +651,7 @@ function process(e){
         // Create Table String
         tableString = '<table id="myTable" class="table table-striped"><thead><tr><th>Site</th><th>Duration</th><th>Distance</th></tr></thead><tbody>';
         for(k = 0; k < order.length; k++){
-          tableString = tableString + '<tr class="myRow" cityname=' + order[k].city + '><td>' + order[k].city + '</td><td>' + order[k].duration_text + '</td><td>' + order[k].distance_text + '</td></tr>';
+          tableString = tableString + '<tr class="myRow" scode=' + order[k].scode + '><td>' + order[k].city + '</td><td>' + order[k].duration_text + '</td><td>' + order[k].distance_text + '</td></tr>';
         }
         tableString = tableString + '</tbody></table>';
         // Insert new element
@@ -724,14 +725,14 @@ $(document).ready(function(){
 */
   $(document).on("mouseenter", ".myRow", function() {
     mapclick = false;
-    var cname = "";
+    var scode = "";
     for(i = 0; i < listOfSites.cities.length; i++){
-      if (listOfSites.cities[i].cname.split(" ").length > 1){
-        cname = listOfSites.cities[i].cname.substr(0, listOfSites.cities[i].cname.indexOf(" "));
+      if (listOfSites.cities[i].scode.split(" ").length > 1){
+        scode = listOfSites.cities[i].scode.substr(0, listOfSites.cities[i].scode.indexOf(" "));
       } else {
-        cname = listOfSites.cities[i].cname
+        scode = listOfSites.cities[i].scode
       }
-      if (cname != $(this).attr('cityname')){
+      if (scode != $(this).attr('scode')){
         cs_marker[i].setVisible(false);
       }
     }
@@ -760,12 +761,12 @@ $(document).ready(function(){
   $(document).on("click", ".myRow", function() {
     mapclick = true;
     for(i = 0; i < listOfSites.cities.length; i++){
-      if (listOfSites.cities[i].cname.split(" ").length > 1){
-        cname = listOfSites.cities[i].cname.substr(0, listOfSites.cities[i].cname.indexOf(" "));
+      if (listOfSites.cities[i].scode.split(" ").length > 1){
+        scode = listOfSites.cities[i].scode.substr(0, listOfSites.cities[i].scode.indexOf(" "));
       } else {
-        cname = listOfSites.cities[i].cname
+        scode = listOfSites.cities[i].scode
       }
-      if (cname != $(this).attr('cityname')){
+      if (scode != $(this).attr('scode')){
         cs_marker[i].setVisible(false);
       }
     }
