@@ -1,0 +1,51 @@
+html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+
+#information-box {
+/* Sizing */
+    width: 400px;
+    height: 100%;
+/* Positioning */
+    position: absolute;
+    top: 0%;
+    right:0%;
+/* Margins */
+    margin-left: -400px;
+
+    background-color: #FFFFFF;
+    overflow: scroll;
+    -webkit-transition: all 0.25s ease-out;
+    -moz-transition: all 0.25s ease-out;
+    transition: all 0.25s ease-out;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+#input-area {
+    padding-left: 10px;
+    padding-top: 10px;
+
+}
+
+#input-area-form{
+    text-align: center;
+}
+
+#table-area{
+    position: absolute;
+    top: 10%
+    right: 0%;
+
+    width:400px;
+    height: 90%
+    margin-left: -400px;
+    z-index:1;
+}
+
+#credits{
+    position: absolute;
+    top:96%;
+    left: 0%;
+    color: white;
+    text-shadow: 2px 2px #A4A4A4;
+    margin-left: 70px;
+
+}
