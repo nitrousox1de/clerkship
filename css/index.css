@@ -42,10 +42,10 @@ html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
 
 #credits{
     position: absolute;
-    top:96%;
-    left: 0%;
+    top:98%;
+    right: 0%;
     color: white;
     text-shadow: 2px 2px #A4A4A4;
-    margin-left: 70px;
+    margin-right: 430px;
 
 }
