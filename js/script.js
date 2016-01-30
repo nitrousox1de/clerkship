@@ -649,9 +649,9 @@ function process(e){
         order = qsort(order);
         tableString = '';
         // Create Table String
-        tableString = '<table id="myTable" class="table table-striped"><thead><tr><th>Site</th><th>Duration</th><th>Distance</th></tr></thead><tbody>';
+        tableString = '<table id="myTable" class="table table-striped"><thead><tr><th>Site</th><th>Code</th><th>Duration</th><th>Distance</th></tr></thead><tbody>';
         for(k = 0; k < order.length; k++){
-          tableString = tableString + '<tr class="myRow" scode=' + order[k].scode + '><td>' + order[k].city + '</td><td>' + order[k].duration_text + '</td><td>' + order[k].distance_text + '</td></tr>';
+          tableString = tableString + '<tr class="myRow" scode=' + order[k].scode + '><td>' + order[k].city + '</td><td>' + order[k].scode + '</td><td>' + order[k].duration_text + '</td><td>' + order[k].distance_text + '</td></tr>';
         }
         tableString = tableString + '</tbody></table>';
         // Insert new element
