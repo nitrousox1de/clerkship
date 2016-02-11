@@ -179,8 +179,8 @@ var listOfSites = {
     },
     {
       "cname": "Lee",
-      "lat": "42.380327",
-      "lng": "-71.138910",
+      "lat": "42.282597",
+      "lng": "-73.254237",
       "preceptor": "Michael Kaplan, M.D.",
       "scode": "FAM437-FP-A"
     },
